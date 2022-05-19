@@ -1,6 +1,7 @@
+//	zxcvbnm ëˆŒëŸ¬ì„œ ê°„ë‹¨í•˜ê²Œ inrange ì¡°ì‘í• ìˆ˜ìˆê²Œ í–ˆìë‹ˆë‹¤.
 /* //**********************************************
-220519 Å°º¸µå ÀÌº¥Æ® Ã³¸®ÇÏ±â
-220428¿¡ string ÀÖ´Ù;
+220519 í‚¤ë³´ë“œ ì´ë²¤íŠ¸ ì²˜ë¦¬í•˜ê¸°
+220428ì— string ìˆë‹¤;
 */ //**********************************************
 
 #include "opencv2/opencv.hpp"
@@ -29,9 +30,9 @@ int main(void)
 void camera_in()
 {
 	/*
-	VideoCapture cap(0);	//0¹ø ±âº»Ä«¸Ş¶ó 1¹øÀº´ÙÀ½°Å..
+	VideoCapture cap(0);	//0ë²ˆ ê¸°ë³¸ì¹´ë©”ë¼ 1ë²ˆì€ë‹¤ìŒê±°..
 
-	if (!cap.isOpened()) {	//¿¹¿ÜÃ³¸®ÄÚµå
+	if (!cap.isOpened()) {	//ì˜ˆì™¸ì²˜ë¦¬ì½”ë“œ
 		cerr << "Camera open failed!" << endl;
 		return;
 	}
@@ -45,20 +46,20 @@ void camera_in()
 	Mat frame;
 	int hh = 0, ss = 0, vv = 0;
 	while (true) {
-//		cap >> frame;	//°øºÎÇÊ¿ä	//@@@@@@@@@@@@@@@@
+//		cap >> frame;	//ê³µë¶€í•„ìš”	//@@@@@@@@@@@@@@@@
 		frame = cap;
-		if (frame.empty()) {	//¿¹¿ÜÃ³¸®
+		if (frame.empty()) {	//ì˜ˆì™¸ì²˜ë¦¬
 			cerr << "Image load failed!" << endl;
 			break;
 		}
 //		img_color = frame.clone();	//@@@@@@@@@@@@@@@@
 		img_color = cap;	//@@@@@@@@@@@@@@@@
-//		flip(frame,frame,1);	//ÁÂ¿ì¹İÀü(°Å¿ï¸ğµå)
+//		flip(frame,frame,1);	//ì¢Œìš°ë°˜ì „(ê±°ìš¸ëª¨ë“œ)
 		imshow("frame", frame);
 		imshow("frame_hsv", just_HSV(frame));
 		setMouseCallback("frame_hsv", mouse_callback);
 		int kc = waitKey(5000);
-		if (kc == 27) // ESC key 0.5ÃÊ´ÜÀ§·Î refresh
+		if (kc == 27) // ESC key 0.5ì´ˆë‹¨ìœ„ë¡œ refresh
 			break;
 		else if (kc == 'z') {	//1
 			hh += 10;
@@ -106,8 +107,8 @@ Mat b_b(Mat input, int hh, int ss, int vv)
 	Mat output,mid;
 	cvtColor(input, mid, COLOR_BGR2HSV);
 	inRange(mid, Scalar(hh, ss, vv), Scalar(255, 255, 255), output);
-	//	erode(output, output, Mat(), Point(-1, -1), 2);		//2¹øÄ§½Ä
-//	dilate(output, output, Mat(), Point(-1, -1), 2);	//2¹øÆØÃ¢
+	//	erode(output, output, Mat(), Point(-1, -1), 2);		//2ë²ˆì¹¨ì‹
+//	dilate(output, output, Mat(), Point(-1, -1), 2);	//2ë²ˆíŒ½ì°½
 	return output;
 }
 
