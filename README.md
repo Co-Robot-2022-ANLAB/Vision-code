@@ -10,3 +10,6 @@ ros node name : hand_number
 
 # 220420_binary
 이기주가 만든 이진화부분.. 
+
+# 220522
+이기주가 올린 220519의 발전된 버전. zxcvbnm asdfgh 와 esc 키로 조작하고 hsv 위 아래 범위 설정 가능
