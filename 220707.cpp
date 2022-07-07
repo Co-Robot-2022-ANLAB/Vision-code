@@ -1,4 +1,4 @@
-//ÅëÇÕÇÒ ÇÁ·Î±×·¥ 0701 ÀÌÁøÈ­±îÁö¸¸ ¿Ï¼º½ÃÅ´.
+//í†µí•©í•  í”„ë¡œê·¸ë¨ 0701 ì´ì§„í™”ê¹Œì§€ë§Œ ì™„ì„±ì‹œí‚´.
 
 #include "opencv2/opencv.hpp"
 #include <iostream>
@@ -21,8 +21,8 @@ int main()
 
 void camera_in()
 {
-	VideoCapture cap(1);	//0¹ø ±âº»Ä«¸Ş¶ó(À¥Ä·) 1¹øÀº´ÙÀ½°Å..
-	if (!cap.isOpened()) {	//¿¹¿ÜÃ³¸®ÄÚµå
+	VideoCapture cap(1);	//0ë²ˆ ê¸°ë³¸ì¹´ë©”ë¼(ì›¹ìº ) 1ë²ˆì€ë‹¤ìŒê±°..
+	if (!cap.isOpened()) {	//ì˜ˆì™¸ì²˜ë¦¬ì½”ë“œ
 		cerr << "Camera open failed!" << endl;
 		return;
 	}
@@ -30,20 +30,20 @@ void camera_in()
 	Mat frame;
 	while (true) {
 		cap >> frame;	//@@@@@@@@@@@@@@@@
-		if (frame.empty()) {	//¿¹¿ÜÃ³¸®
+		if (frame.empty()) {	//ì˜ˆì™¸ì²˜ë¦¬
 			cerr << "Image load failed!" << endl;
 			break;
 		}
 
 //############################################################################################
 
-//		flip(frame,frame,1);	//ÁÂ¿ì¹İÀü(°Å¿ï¸ğµå)
+//		flip(frame,frame,1);	//ì¢Œìš°ë°˜ì „(ê±°ìš¸ëª¨ë“œ)
 		imshow("frame", frame);
 //		imshow("frame_b", b_b(frame, 80, 170, 100, 100, 255, 205));
 		imshow("frame_b", b_b(frame, 80, 170, 100, 100, 255, 205));
 		int kc = waitKey(5);	// 5ms refresh-rate
 		if (kc == 27) { // ESC key
-			cout << "esc °¨Áö" << endl;
+			cout << "esc ê°ì§€" << endl;
 			break;
 		}
 
@@ -59,7 +59,7 @@ Mat b_b(Mat input, int hh, int ss, int vv, int hhh, int sss, int vvv)
 	Mat output, mid;
 	cvtColor(input, mid, COLOR_BGR2HSV);
 	inRange(mid, Scalar(hh, ss, vv), Scalar(hhh, sss, vvv), output);
-//	erode(output, output, Mat(), Point(-1, -1), 2);		//2¹øÄ§½Ä
-//	dilate(output, output, Mat(), Point(-1, -1), 2);	//2¹øÆØÃ¢
+//	erode(output, output, Mat(), Point(-1, -1), 2);		//2ë²ˆì¹¨ì‹
+//	dilate(output, output, Mat(), Point(-1, -1), 2);	//2ë²ˆíŒ½ì°½
 	return output;
 }
