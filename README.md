@@ -13,3 +13,7 @@ ros node name : hand_number
 
 # 220522
 이기주가 올린 220519의 발전된 버전. zxcvbnm asdfgh 와 esc 키로 조작하고 hsv 위 아래 범위 설정 가능
+
+#hand_check2.py
+08_22 박경근
+
