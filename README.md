@@ -18,3 +18,4 @@ ros node name : hand_number
 08_22 박경근
 
 #tool_detect.cpp
+기주가 작성한 부분에 ros 퍼블리쉬 
