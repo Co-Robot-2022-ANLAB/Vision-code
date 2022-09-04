@@ -19,3 +19,6 @@ ros node name : hand_number
 
 # tool_detect.cpp
 기주가 작성한 부분에 ros 퍼블리쉬 
+
+#display.cpp
+상
