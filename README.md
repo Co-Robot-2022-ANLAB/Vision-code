@@ -18,7 +18,7 @@ ros node name : hand_number
 08_22 박경근
 
 # tool_detect.cpp
-기주가 작성한 부분에 ros 퍼블리쉬 
+기주가 작성한 부분에 ros 퍼블리쉬 - 박경근
 
 # display.cpp
 상황판-0904 박경근
