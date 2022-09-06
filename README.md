@@ -22,4 +22,5 @@ ros node name : hand_number
 
 # display.cpp
 상황판-0904 박경근
-0907 -> 
+
+0907 -> 이전보다 더욱더 GUI
